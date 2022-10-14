@@ -5,6 +5,39 @@
   </div>
 </template>
 
+<script setup>
+import { gsap } from "gsap";
+import { onMounted, ref } from "vue";
+
+const magnetic = ref(null);
+
+onMounted(() => {
+  const mContent = magnetic.value.nextElementSibling;
+
+  function parallaxIt(e, target) {
+    const boundingRect = magnetic.value.getBoundingClientRect();
+    const relX = e.pageX - boundingRect.left;
+    const relY = e.pageY - boundingRect.top;
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    gsap.to(target, {
+      x: (relX - boundingRect.width / 2) / 10,
+      y: (relY - boundingRect.height / 2 - scrollTop) / 10,
+      ease: "power1",
+      duration: 0.8,
+    });
+  }
+
+  function callParallax(e) {
+    parallaxIt(e, mContent);
+  }
+
+  magnetic.value.addEventListener("mousemove", function (e) {
+    callParallax(e);
+  });
+});
+</script>
+
 <style>
 .magnetic-area {
   position: absolute;
@@ -56,35 +89,3 @@
 }
 </style>
 
-<script setup>
-import { gsap } from "gsap";
-import { onMounted, ref } from "vue";
-
-const magnetic = ref(null);
-
-onMounted(() => {
-  const mContent = magnetic.value.nextElementSibling;
-
-  function parallaxIt(e, target) {
-    const boundingRect = magnetic.value.getBoundingClientRect();
-    const relX = e.pageX - boundingRect.left;
-    const relY = e.pageY - boundingRect.top;
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    gsap.to(target, {
-      x: (relX - boundingRect.width / 2) / 10,
-      y: (relY - boundingRect.height / 2 - scrollTop) / 10,
-      ease: "power1",
-      duration: 0.8,
-    });
-  }
-
-  function callParallax(e) {
-    parallaxIt(e, mContent);
-  }
-
-  magnetic.value.addEventListener("mousemove", function (e) {
-    callParallax(e);
-  });
-});
-</script>

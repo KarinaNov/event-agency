@@ -40,8 +40,8 @@
 </template>
 
 <script>
-import HomePageLanguage from "./HomePageLanguage.vue";
-import HomePageMenu from "./HomePageMenu.vue";
+import HomePageLanguage from "@/components/HomePageLanguage.vue";
+import HomePageMenu from "@/components/HomePageLanguage.vue";
 export default {
   components: { HomePageLanguage, HomePageMenu },
 };

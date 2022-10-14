@@ -15,9 +15,9 @@
 <script>
 import VTitle from "@/components/ui/ui-title.vue";
 import HomePageHeader from "@/components/HomePageHeader.vue";
-import VButton from "../components/ui/ui-button.vue";
+import VButton from "@/components/ui/ui-button.vue";
 import HomePageAnimation from "@/components/HomePageAnimation.vue";
-import VCircle from "../components/ui/ui-circle.vue";
+import VCircle from "@/components/ui/ui-circle.vue";
 export default {
   components: { VTitle, HomePageHeader, VButton, HomePageAnimation, VCircle },
 };
