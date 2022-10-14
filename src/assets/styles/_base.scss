@@ -1,0 +1,26 @@
+:root {
+  --primary-text-color: #373737;
+  --main-color: #e5e5e5;
+  --hover-color: #fff;
+}
+
+body {
+  font-family: "Grtsk Giga", sans-serif;
+  color: var(--primary-text-color);
+  background: var(--main-color);
+}
+
+h1,
+h2,
+h3,
+.h1,
+.h2,
+.h3 {
+  font-weight: 700;
+  color: #333;
+}
+.container{
+	max-width: 1440px;
+  padding: 0 30px;
+	margin: 0 auto;
+}
