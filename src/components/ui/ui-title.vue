@@ -30,18 +30,22 @@
 @media screen and (max-width: 1151px) {
   .title-1 {
     max-width: 900px;
+    font-size: 70px;
   }
 }
 
 @media screen and (max-width: 768px) {
   .title-1 {
     max-width: 700px;
+    font-size: 42px;
+    line-height: 60px;
   }
 }
 
 @media screen and (max-width: 620px) {
   .title-1 {
     max-width: 520px;
+    font-size: 32px;
   }
 }
 

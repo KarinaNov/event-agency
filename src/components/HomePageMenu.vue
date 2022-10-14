@@ -1,14 +1,14 @@
 <template>
-  <div class="header-bottom" :class="{ '-active': menuIsActive }">
+  <div class="header-bottom">
     <nav class="header-navigation">
       <ul>
-        <li class="nav-item text-1">
+        <li class="nav-item nav-item__left">
           <router-link to="/test">where?</router-link>
         </li>
-        <li class="nav-item text-1">
+        <li class="nav-item nav-item__bottom">
           <router-link to="/test">who?</router-link>
         </li>
-        <li class="nav-item text-1">
+        <li class="nav-item nav-item__right">
           <router-link to="/test">what?</router-link>
         </li>
       </ul>
@@ -18,14 +18,7 @@
 
 <script>
 export default {
-  name: "v-menu",
-  components: {},
-  data() {
-    return {
-      menuIsActive: "",
-    };
-  },
-  methods: {},
+  name: "v-menu"
 };
 </script>
 
@@ -38,20 +31,20 @@ export default {
   text-align: center;
 }
 
-.nav-item:nth-child(1) {
+.nav-item__left {
   top: calc(50% + 20px);
   left: 10px;
   transform: rotate(-90deg);
   transform-origin: 0% 0%;
 }
 
-.nav-item:nth-child(2) {
+.nav-item__bottom {
   bottom: 10px;
   left: calc(50% - 20px);
 }
 
-.nav-item:nth-child(3) {
-  right: 30px;
+.nav-item__right {
+  right: 0px;
   top: 50%;
   transform: rotate(90deg);
 }

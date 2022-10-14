@@ -1,6 +1,6 @@
 <template>
-  <div tabindex="1" class="v-selector" @click="selected($event)">
-    <div class="v-selector__img">
+  <div tabindex="1" class="language" @click="selected($event)">
+    <div class="language__img">
       <img
         src="@/assets/images/tongue.png"
         alt="LangSelector"
@@ -9,8 +9,8 @@
       />
     </div>
     <div>
-      <span class="v-selector__option_ua">UA</span>
-      <span class="v-selector__option_en">EN</span>
+      <span class="language__option_ua">UA</span>
+      <span class="language__option_en">EN</span>
     </div>
   </div>
 </template>
@@ -27,11 +27,10 @@ export default {
 </script>
 
 <style lang="scss">
-.v-selector {
+.language {
   position: absolute;
   display: flex;
   align-items: center;
-
   :hover {
     cursor: pointer;
   }
@@ -41,14 +40,12 @@ export default {
     height: 38px;
     border-radius: 50%;
     border: 1px solid rgba(255, 255, 255, 0.911);
-
     img {
       display: block;
       margin: 0 auto;
       transform: translateY(50%);
     }
   }
-
   span {
     margin: 0 10px;
     opacity: 0;
@@ -75,4 +72,11 @@ export default {
     }
   }
 }
+@media screen and (max-width: 620px) {
+  .language__option_ua,
+  .language__option_en{
+    font-size: 12px;
+  }
+}
+
 </style>

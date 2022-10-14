@@ -81,4 +81,9 @@ export default {
     transform: translateX(100%);
   }
 }
+@media screen and (max-width: 620px) {
+    .page-transition{
+        opacity: 0;
+    }
+}
 </style>
